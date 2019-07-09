@@ -28,7 +28,7 @@
                 <version>${dropwizard.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
-            </dependency>           
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -38,10 +38,10 @@
             <artifactId>dropwizard-core</artifactId>
         </dependency>
         <dependency>
-		    <groupId>ru.vyarus</groupId>
-		    <artifactId>dropwizard-guicey</artifactId>
-		    <version>4.2.2</version>
-		</dependency>
+            <groupId>ru.vyarus</groupId>
+            <artifactId>dropwizard-guicey</artifactId>
+            <version>4.2.2</version>
+        </dependency>
     </dependencies>
 
     <build>

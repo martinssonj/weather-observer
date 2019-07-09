@@ -4,9 +4,6 @@ import io.dropwizard.Application;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
 import ru.vyarus.dropwizard.guice.GuiceBundle;
-import ru.vyarus.dropwizard.guice.GuiceyOptions;
-import ru.vyarus.dropwizard.guice.module.installer.feature.jersey.provider.JerseyProviderInstaller;
-import ru.vyarus.dropwizard.guice.module.installer.feature.web.WebFilterInstaller;
 import se.gocta.demo.core.weather.WeatherModule;
 
 public class WeatherObserverApplication extends Application<WeatherObserverConfiguration> {
@@ -22,13 +19,10 @@ public class WeatherObserverApplication extends Application<WeatherObserverConfi
 
     @Override
     public void initialize(final Bootstrap<WeatherObserverConfiguration> bootstrap) {
-    	
-    	bootstrap.addBundle(GuiceBundle.builder()
-    			.modules(WeatherModule.weatherModule())
-    			.enableAutoConfig(getClass().getPackage().getName())
-    			.build());
-    	
-    	System.out.println("här");
+        bootstrap.addBundle(GuiceBundle.builder()
+                .modules(WeatherModule.weatherModule())
+                .enableAutoConfig(getClass().getPackage().getName())
+                .build());
     }
 
     @Override
