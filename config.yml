@@ -2,3 +2,7 @@ logging:
   level: INFO
   loggers:
     se.gocta.demo: DEBUG
+
+openWeatherMapConfiguration:
+  baseUrl: http://api.openweathermap.org/data/2.5/
+  appId: e910f1bca295fe5626326d19dca04c77

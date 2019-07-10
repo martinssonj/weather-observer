@@ -1,11 +1,14 @@
 package se.gocta.demo.core.weather.service;
 
-import se.gocta.demo.core.weather.model.Weather;
+import se.gocta.demo.core.weather.service.model.Weather;
 
-import java.util.Optional;
+import java.time.Instant;
+import java.util.List;
 
 public interface WeatherService {
 
-    Optional<Weather> getWeather(final String city, String country);
+    boolean addCity(final String userId, final Instant periodStart, final Instant periodEnd, final String city,
+            String country);
 
+    List<Weather> getObservations(final String userId);
 }

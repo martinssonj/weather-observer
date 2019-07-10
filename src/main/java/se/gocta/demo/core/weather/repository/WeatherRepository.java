@@ -7,4 +7,6 @@ import java.util.Optional;
 public interface WeatherRepository {
 
     Optional<CurrentWeather> getCurrentWeather(final String city, final String country);
+
+    Optional<CurrentWeather> getCurrentWeather(Integer cityId);
 }
