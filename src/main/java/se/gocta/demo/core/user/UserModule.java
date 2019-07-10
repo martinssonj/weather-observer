@@ -5,6 +5,9 @@ import se.gocta.demo.WeatherObserverConfiguration;
 import se.gocta.demo.core.user.service.UserService;
 import se.gocta.demo.core.user.service.UserServiceImpl;
 
+/*
+ * Guice Module for user data
+ */
 public class UserModule extends DropwizardAwareModule<WeatherObserverConfiguration> {
 
     private UserModule() {

@@ -7,6 +7,9 @@ import se.gocta.demo.core.weather.repository.WeatherRepositoryImpl;
 import se.gocta.demo.core.weather.service.WeatherService;
 import se.gocta.demo.core.weather.service.WeatherServiceImpl;
 
+/*
+ * Guice Module for weather
+ */
 public class WeatherModule extends DropwizardAwareModule<WeatherObserverConfiguration> {
 
     private WeatherModule() {

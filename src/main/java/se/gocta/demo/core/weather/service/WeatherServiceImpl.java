@@ -44,6 +44,7 @@ public class WeatherServiceImpl implements WeatherService {
 
     @Override
     public List<Weather> getObservations(final String userId) {
+        //If any userdata is stored try to get current weather for the cities or return empty
         return userService.fetch(userId).map(userData -> {
             List<Weather> list = new ArrayList<>();
             for (final Map.Entry<Integer, City> entry : userData.getCities().entrySet()) {
@@ -54,6 +55,7 @@ public class WeatherServiceImpl implements WeatherService {
 
                 if (weather.isPresent()) {
                     final Weather w = weather.get();
+                    //If recent weather report is between the given period add to list
                     if ((w.getDateTime().isAfter(city.getPeriodStart()) || w.getDateTime().equals(city.getPeriodStart()))
                             && w.getDateTime().isBefore(city.getPeriodEnd()) || w.getDateTime().equals(city.getPeriodEnd())) {
                         w.setPeriodStart(city.getPeriodStart());

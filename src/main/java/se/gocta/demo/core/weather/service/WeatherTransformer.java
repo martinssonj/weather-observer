@@ -6,6 +6,9 @@ import se.gocta.demo.core.weather.service.model.Weather;
 import java.time.Instant;
 import java.util.function.Function;
 
+/*
+ *  Transforms Open Weather Maps data to own domain model
+ */
 public class WeatherTransformer implements Function<CurrentWeather, Weather> {
 
     @Override

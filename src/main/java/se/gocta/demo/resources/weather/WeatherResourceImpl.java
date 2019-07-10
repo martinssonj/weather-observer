@@ -14,6 +14,9 @@ import java.util.stream.Collectors;
 import static javax.ws.rs.core.Response.Status.CREATED;
 import static javax.ws.rs.core.Response.Status.NOT_FOUND;
 
+/*
+ * API for weather observer
+ */
 public class WeatherResourceImpl implements WeatherResource {
 
     private static final String AMERICA_LOS_ANGELES = "America/Los_Angeles";
@@ -37,6 +40,7 @@ public class WeatherResourceImpl implements WeatherResource {
     public Response addCity(final String userId, final String city, final String countryCode, final String periodStart,
             final String periodEnd) {
 
+        //Convert time from PST to UTC
         final Instant start = LocalDateTime.parse(periodStart).atZone(ZoneId.of(AMERICA_LOS_ANGELES)).toInstant();
         final Instant end = LocalDateTime.parse(periodEnd).atZone(ZoneId.of(AMERICA_LOS_ANGELES)).toInstant();
 

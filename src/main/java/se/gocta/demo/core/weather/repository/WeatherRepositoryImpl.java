@@ -9,6 +9,9 @@ import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.Response;
 import java.util.Optional;
 
+/**
+ * Fetches information from Open Weather Map
+ */
 public class WeatherRepositoryImpl implements WeatherRepository {
 
     private final WebTarget target;
@@ -42,6 +45,7 @@ public class WeatherRepositoryImpl implements WeatherRepository {
                 .request().get();
 
         if (response.getStatus() == 200) {
+            //Let Jersey unmarshall
             return Optional.of(response.readEntity(CurrentWeather.class));
         }
         return Optional.empty();

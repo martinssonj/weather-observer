@@ -27,10 +27,8 @@ public class WeatherObserverApplication extends Application<WeatherObserverConfi
     }
 
     @Override
-    public void run(final WeatherObserverConfiguration configuration,
-            final Environment environment) {
-        // TODO: implement application
-
+    public void run(final WeatherObserverConfiguration configuration, final Environment environment) {
+        //Not necessary to run anything here when dependency injection is used.
     }
 
 }
